@@ -29,16 +29,15 @@ export default function Header({}: Props) {
     >
     
     
-    
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row items-center space-x-9 ">
       {/* Social Icons */}
-      <SocialIcon url="https://github.com/ani-sivaa" fgColor="gray" 
+      <SocialIcon url="https://github.com/ani-sivaa"  
       
       />
-      <SocialIcon url="https://github.com/ani-sivaa" fgColor="gray"
+      <SocialIcon url="https://www.linkedin.com/in/anisiva/" 
       
       />
-      <SocialIcon url="https://github.com/ani-sivaa" fgColor="gray" 
+      <SocialIcon url="https://github.com/ani-sivaa"  
       
       />
     </div>
@@ -55,7 +54,7 @@ export default function Header({}: Props) {
     animate={{
         x:0,
         opacity:1,
-        scale:1,
+        scale:1.5,
     }}
     transition={{
         duration:1,

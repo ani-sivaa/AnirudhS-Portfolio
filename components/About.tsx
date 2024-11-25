@@ -11,16 +11,23 @@ export default function About({}: Props) {
         </h3>
 
         <motion.img 
-            initial={{
-                x:-200,
-                opacity:0,
-            }}
-            transition={{
-                duration: 1.2,
-            }}
+        initial={{
+            x: -200,
+            opacity: 0,
+        }}
+        animate={{
+            x: 0,
+            opacity: 1,
+        }}
+        transition={{
+            duration: 1.2,
+        }}
+        viewport={{ once: true }} 
+
             whileInView={{x:0}}
-            src="https://media.licdn.com/dms/image/v2/D5603AQHGL5oyMrU93A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719017215194?e=1738195200&v=beta&t=NtR12aADb45Y9lT3uIph5GRFKKPIZgrdv8-EenmqUJY"
-            className='-mb-20 md:mb-0 flex-shrink-0 w56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
+            src='https://media.licdn.com/dms/image/v2/D5603AQHGL5oyMrU93A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718319210642?e=1738195200&v=beta&t=TX8nUs_HdgaljGTpI1k05ZCQOtNcBeT0-j4Q3yxY8Wk'
+
+            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
             />
             <div className='space-y-10 px-0 md:px-10'>
                 <h4 className='text-4xl font-semibold'>
