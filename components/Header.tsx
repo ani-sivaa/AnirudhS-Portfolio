@@ -6,8 +6,8 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-  <header className='sticky top-0 p-10 flex items-start justify-between max-w-7xl mx-auto
-  xl:items-center'>
+  <header   className="sticky top-0 z-50 p-10 flex items-start justify-between max-w-7xl mx-auto xl:items-center">
+
     {/* THIS IS WHERE I IMPLEMENT FRAMER MOTION for the header file animation */}
     < motion.div 
     /*Intitial setup of the animation*/
@@ -38,7 +38,7 @@ export default function Header({}: Props) {
       
       />
       <SocialIcon url="https://github.com/ani-sivaa"  
-      
+
       />
     </div>
     </motion.div>

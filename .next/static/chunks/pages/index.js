@@ -6,7 +6,7 @@ __turbopack_load_page_chunks__("/", [
   "static/chunks/node_modules_react-social-icons_dist_6efcda._.js",
   "static/chunks/node_modules_framer-motion_dist_es_75a093._.js",
   "static/chunks/node_modules_2b7bff._.js",
-  "static/chunks/[root of the server]__f580a7._.js",
+  "static/chunks/[root of the server]__34d6c1._.js",
   "static/chunks/pages_index_5771e1._.js",
-  "static/chunks/pages_index_00b1ba._.js"
+  "static/chunks/pages_index_8e2c61._.js"
 ])
