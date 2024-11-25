@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ExperienceCard from "../components/ExperienceCard"
 type Props = {}
 
 function WorkExperience({}: Props) {
@@ -9,9 +9,9 @@ function WorkExperience({}: Props) {
             Experience
     </h3>
     <div>
-        {/*Experiecne Card*/}
-        {/*Experiecne Card*/}
-        {/*Experiecne Card*/}
+        <ExperienceCard />
+        <ExperienceCard />
+        <ExperienceCard />
 
     </div>
     </div>

@@ -11,7 +11,7 @@ export default function About({}: Props) {
         </h3>
 
         <motion.img 
-            intial={{
+            initial={{
                 x:-200,
                 opacity:0,
             }}
