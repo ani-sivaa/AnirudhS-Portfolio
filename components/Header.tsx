@@ -1,5 +1,6 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -7,6 +8,28 @@ export default function Header({}: Props) {
   return (
   <header className='sticky top-0 p-10 flex items-start justify-between max-w-7xl mx-auto
   xl:items-center'>
+    {/* THIS IS WHERE I IMPLEMENT FRAMER MOTION for the header file animation */}
+    < motion.div 
+    /*Intitial setup of the animation*/
+    initial={{
+        x: -500,
+        opacity: 0,
+        scale:0.5
+    }}
+    /* final animation (resets the objects to its original position hence x:0 ) */
+    animate={{
+        x:0,
+        opacity:1,
+        scale:1
+    }}
+    /*this code makes it that the social icons on the top left header dont just fly into the screen too quick duration is in seconds I believe*/
+    transition={{
+        duration: 1,
+    }}
+    >
+    
+    
+    
     <div className="flex flex-row items-center">
       {/* Social Icons */}
       <SocialIcon url="https://github.com/ani-sivaa" fgColor="gray" 
@@ -19,8 +42,27 @@ export default function Header({}: Props) {
       
       />
     </div>
+    </motion.div>
+
+
+    <motion.div 
     
-    <div className="flex flex-row items-center text-gray-300 cursor-pointer">
+    initial={{
+        x:500,
+        opacity:0,
+        scale:0.5,
+    }}
+    animate={{
+        x:0,
+        opacity:1,
+        scale:1,
+    }}
+    transition={{
+        duration:1,
+    }}
+    
+    
+    className="flex flex-row items-center text-gray-300 cursor-pointer">
         <SocialIcon 
             className='cursor_pointer'
             network='email'
@@ -29,8 +71,9 @@ export default function Header({}: Props) {
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400 "> Get In Touch</p>
 
-    </div>
+    </motion.div>
     
-  </header>) 
+  </header>
+  ); 
   
 }

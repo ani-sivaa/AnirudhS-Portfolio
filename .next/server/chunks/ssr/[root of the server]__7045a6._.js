@@ -145,47 +145,61 @@ __turbopack_esm__({
 });
 var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (react-social-icons, esm_import)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__
 ]);
 ([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
+;
 function Header({}) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("header", {
         className: "sticky top-0 p-10 flex items-start justify-between max-w-7xl mx-auto xl:items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "flex flex-row items-center",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
-                        url: "https://github.com/ani-sivaa",
-                        fgColor: "gray"
-                    }, void 0, false, {
-                        fileName: "[project]/components/Header.tsx",
-                        lineNumber: 12,
-                        columnNumber: 7
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
-                        url: "https://github.com/ani-sivaa",
-                        fgColor: "gray"
-                    }, void 0, false, {
-                        fileName: "[project]/components/Header.tsx",
-                        lineNumber: 15,
-                        columnNumber: 7
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
-                        url: "https://github.com/ani-sivaa",
-                        fgColor: "gray"
-                    }, void 0, false, {
-                        fileName: "[project]/components/Header.tsx",
-                        lineNumber: 18,
-                        columnNumber: 7
-                    }, this)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
+                /*Intitial setup of the animation*/ initial: {
+                    x: -500,
+                    opacity: 0,
+                    scale: 0.5
+                },
+                animate: {},
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                    className: "flex flex-row items-center",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
+                            url: "https://github.com/ani-sivaa",
+                            fgColor: "gray"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Header.tsx",
+                            lineNumber: 29,
+                            columnNumber: 7
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
+                            url: "https://github.com/ani-sivaa",
+                            fgColor: "gray"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Header.tsx",
+                            lineNumber: 32,
+                            columnNumber: 7
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
+                            url: "https://github.com/ani-sivaa",
+                            fgColor: "gray"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Header.tsx",
+                            lineNumber: 35,
+                            columnNumber: 7
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/Header.tsx",
+                    lineNumber: 27,
+                    columnNumber: 5
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/components/Header.tsx",
-                lineNumber: 10,
+                lineNumber: 12,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -198,7 +212,7 @@ function Header({}) {
                         bgColor: "transparent"
                     }, void 0, false, {
                         fileName: "[project]/components/Header.tsx",
-                        lineNumber: 24,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -206,19 +220,19 @@ function Header({}) {
                         children: " Get In Touch"
                     }, void 0, false, {
                         fileName: "[project]/components/Header.tsx",
-                        lineNumber: 30,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Header.tsx",
-                lineNumber: 23,
+                lineNumber: 40,
                 columnNumber: 5
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Header.tsx",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 3
     }, this);
 }
