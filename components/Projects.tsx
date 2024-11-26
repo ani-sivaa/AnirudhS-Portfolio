@@ -6,17 +6,18 @@ type Props = {};
 function Projects({}: Props) {
   // Define your projects with more detailed information
   const projects = [
+    
+    {
+      title: "Letmetalktoahuman.ai",
+      description:
+        "CalHacks2024 Winner (VAPI Virality Track)- Integrated VAPI for a hyper realistic voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
+      imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LceDUwCcZm6APQWnkRhh6ohiJ8h5Il6h4g&s",
+    },
     {
       title: "NLP Search + Churn Prediction Model",
       description:
         "AI solutions for e-commerce websites presented for GDXinc. I was chosen out of 300 applicants to present my NLP Search and churn prediction model solution.",
       imageSrc: "https://i.ibb.co/NK0wwBL/IMG-7653.jpg",
-    },
-    {
-      title: "Letmetalktoahuman.ai",
-      description:
-        "Integrated VAPI for a hyper relasitc voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
-      imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LceDUwCcZm6APQWnkRhh6ohiJ8h5Il6h4g&s",
     },
     
   ];
@@ -46,7 +47,7 @@ function Projects({}: Props) {
               viewport={{ once: true }}
               src={project.imageSrc}
               alt={`Project ${i + 1}`}
-              className="relative rounded-full h-64 w-64 mx-auto object-cover "
+              className="relative rounded-full h-48 w-48 mx-auto object-cover "
             />
 
             {/* Project Description */}

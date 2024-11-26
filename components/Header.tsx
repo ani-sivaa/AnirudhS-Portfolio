@@ -37,7 +37,7 @@ export default function Header({}: Props) {
       <SocialIcon url="https://www.linkedin.com/in/anisiva/" 
       
       />
-      <SocialIcon url="https://github.com/ani-sivaa"  
+      <SocialIcon url="https://devpost.com/anisiva213?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
 
       />
     </div>
@@ -62,13 +62,15 @@ export default function Header({}: Props) {
     
     
     className="flex flex-row items-center text-gray-300 cursor-pointer">
-        <SocialIcon 
-            className='cursor_pointer'
-            network='email'
-            fgColor="gray"
-            bgColor='transparent'
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400 "> Get In Touch</p>
+ <a href="#contact" className="flex items-center">
+    <SocialIcon 
+        className='cursor_pointer'
+        network='email'
+        fgColor="gray"
+        bgColor='transparent'
+    />
+    <p className="uppercase hidden md:inline-flex text-sm text-gray-400 ml-2">Get In Touch</p>
+</a>
 
     </motion.div>
     
