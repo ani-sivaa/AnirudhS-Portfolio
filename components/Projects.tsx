@@ -15,15 +15,10 @@ function Projects({}: Props) {
     {
       title: "Letmetalktoahuman.ai",
       description:
-        "CalHacks 2024 Winner, integrated VAPI for a hyper relasitc voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
-      imageSrc: "https://i.ibb.co/4g5hD2r/IMG-7654.jpg",
+        "Integrated VAPI for a hyper relasitc voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
+      imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LceDUwCcZm6APQWnkRhh6ohiJ8h5Il6h4g&s",
     },
-    {
-      title: "Image Recognition for Quality Control",
-      description:
-        "Built an image recognition system to identify defects in products on the assembly line, increasing production efficiency.",
-      imageSrc: "https://i.ibb.co/ZVZ7JYX/IMG-7655.jpg",
-    },
+    
   ];
 
   return (
