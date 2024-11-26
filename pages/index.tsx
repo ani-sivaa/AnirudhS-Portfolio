@@ -5,11 +5,14 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
+import Projects from "../components/Projects"
+import ContactMe from "../components/ContactMe"
+
 export default function Home() {
   
 
   return (
-    <div className="bg-[rgb(17,17,17)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div className="bg-[rgb(17,17,17)] text-white h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden">
       <Head>
         <title>Anirudh's Portfolio</title>
       </Head>
@@ -37,7 +40,15 @@ export default function Home() {
 
       </section>
       {/* Projects */}
+       <section id="Projects" className="snap-start">
+       <Projects />
+       
+       </section>
+       
       {/* Contact Me */}
+      <section className="snap-start">
+        <ContactMe/>
+      </section>
     </div>
   );
 }
