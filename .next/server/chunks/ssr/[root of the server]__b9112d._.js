@@ -1,574 +1,174 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/[root of the server]__f558af._.js", {
+module.exports = {
 
-"[turbopack]/browser/dev/hmr-client/websocket.ts [client] (ecmascript)": ((__turbopack_context__) => {
-"use strict";
+"[externals]/ [external] (react/jsx-dev-runtime, cjs)": (function(__turbopack_context__) {
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, z: require } = __turbopack_context__;
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
 {
-// Adapted from https://github.com/vercel/next.js/blob/canary/packages/next/src/client/dev/error-overlay/websocket.ts
-__turbopack_esm__({
-    "addMessageListener": (()=>addMessageListener),
-    "connectHMR": (()=>connectHMR),
-    "sendMessage": (()=>sendMessage)
-});
-let source;
-const eventCallbacks = [];
-// TODO: add timeout again
-// let lastActivity = Date.now()
-function getSocketProtocol(assetPrefix) {
-    let protocol = location.protocol;
-    try {
-        // assetPrefix is a url
-        protocol = new URL(assetPrefix).protocol;
-    } catch (_) {}
-    return protocol === "http:" ? "ws" : "wss";
-}
-function addMessageListener(cb) {
-    eventCallbacks.push(cb);
-}
-function sendMessage(data) {
-    if (!source || source.readyState !== source.OPEN) return;
-    return source.send(data);
-}
-function connectHMR(options) {
-    const { timeout = 5 * 1000 } = options;
-    function init() {
-        if (source) source.close();
-        console.log("[HMR] connecting...");
-        function handleOnline() {
-            const connected = {
-                type: "turbopack-connected"
-            };
-            eventCallbacks.forEach((cb)=>{
-                cb(connected);
-            });
-            if (options.log) console.log("[HMR] connected");
-        // lastActivity = Date.now()
-        }
-        function handleMessage(event) {
-            // lastActivity = Date.now()
-            const message = {
-                type: "turbopack-message",
-                data: JSON.parse(event.data)
-            };
-            eventCallbacks.forEach((cb)=>{
-                cb(message);
-            });
-        }
-        // let timer: NodeJS.Timeout
-        function handleDisconnect() {
-            source.close();
-            setTimeout(init, timeout);
-        }
-        const { hostname, port } = location;
-        const protocol = getSocketProtocol(options.assetPrefix || "");
-        const assetPrefix = options.assetPrefix.replace(/^\/+/, "");
-        let url = `${protocol}://${hostname}:${port}${assetPrefix ? `/${assetPrefix}` : ""}`;
-        if (assetPrefix.startsWith("http")) {
-            url = `${protocol}://${assetPrefix.split("://")[1]}`;
-        }
-        source = new window.WebSocket(`${url}${options.path}`);
-        source.onopen = handleOnline;
-        source.onerror = handleDisconnect;
-        source.onmessage = handleMessage;
-    }
-    init();
-}
+const mod = __turbopack_external_require__("react/jsx-dev-runtime");
+
+module.exports = mod;
 }}),
-"[turbopack]/browser/dev/hmr-client/hmr-client.ts [client] (ecmascript)": ((__turbopack_context__) => {
+"[externals]/ [external] (react/jsx-runtime, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("react/jsx-runtime");
+
+module.exports = mod;
+}}),
+"[externals]/ [external] (react, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("react");
+
+module.exports = mod;
+}}),
+"[externals]/ [external] (path, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("path");
+
+module.exports = mod;
+}}),
+"[externals]/ [external] (next/dist/compiled/next-server/pages.runtime.dev.js, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("next/dist/compiled/next-server/pages.runtime.dev.js");
+
+module.exports = mod;
+}}),
+"[externals]/ [external] (@opentelemetry/api, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("@opentelemetry/api");
+
+module.exports = mod;
+}}),
+"[project]/pages/_document.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, z: require } = __turbopack_context__;
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
 {
-/// <reference path="../../../shared/runtime-types.d.ts" />
-/// <reference path="../../runtime/base/dev-globals.d.ts" />
-/// <reference path="../../runtime/base/dev-protocol.d.ts" />
-/// <reference path="../../runtime/base/dev-extensions.ts" />
 __turbopack_esm__({
-    "connect": (()=>connect),
-    "setHooks": (()=>setHooks),
-    "subscribeToUpdate": (()=>subscribeToUpdate)
+    "default": (()=>Document)
 });
-var __TURBOPACK__imported__module__$5b$turbopack$5d2f$browser$2f$dev$2f$hmr$2d$client$2f$websocket$2e$ts__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[turbopack]/browser/dev/hmr-client/websocket.ts [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$document$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/document.js [ssr] (ecmascript)");
 ;
-function connect({ // TODO(WEB-1465) Remove this backwards compat fallback once
-// vercel/next.js#54586 is merged.
-addMessageListener = __TURBOPACK__imported__module__$5b$turbopack$5d2f$browser$2f$dev$2f$hmr$2d$client$2f$websocket$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["addMessageListener"], // TODO(WEB-1465) Remove this backwards compat fallback once
-// vercel/next.js#54586 is merged.
-sendMessage = __TURBOPACK__imported__module__$5b$turbopack$5d2f$browser$2f$dev$2f$hmr$2d$client$2f$websocket$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["sendMessage"], onUpdateError = console.error }) {
-    addMessageListener((msg)=>{
-        switch(msg.type){
-            case "turbopack-connected":
-                handleSocketConnected(sendMessage);
-                break;
-            default:
-                try {
-                    if (Array.isArray(msg.data)) {
-                        for(let i = 0; i < msg.data.length; i++){
-                            handleSocketMessage(msg.data[i]);
-                        }
-                    } else {
-                        handleSocketMessage(msg.data);
-                    }
-                    applyAggregatedUpdates();
-                } catch (e) {
-                    console.warn("[Fast Refresh] performing full reload\n\n" + "Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.\n" + "You might have a file which exports a React component but also exports a value that is imported by a non-React component file.\n" + "Consider migrating the non-React component export to a separate file and importing it into both files.\n\n" + "It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.\n" + "Fast Refresh requires at least one parent function component in your React tree.");
-                    onUpdateError(e);
-                    location.reload();
-                }
-                break;
-        }
-    });
-    const queued = globalThis.TURBOPACK_CHUNK_UPDATE_LISTENERS;
-    if (queued != null && !Array.isArray(queued)) {
-        throw new Error("A separate HMR handler was already registered");
-    }
-    globalThis.TURBOPACK_CHUNK_UPDATE_LISTENERS = {
-        push: ([chunkPath, callback])=>{
-            subscribeToChunkUpdate(chunkPath, sendMessage, callback);
-        }
-    };
-    if (Array.isArray(queued)) {
-        for (const [chunkPath, callback] of queued){
-            subscribeToChunkUpdate(chunkPath, sendMessage, callback);
-        }
-    }
-}
-const updateCallbackSets = new Map();
-function sendJSON(sendMessage, message) {
-    sendMessage(JSON.stringify(message));
-}
-function resourceKey(resource) {
-    return JSON.stringify({
-        path: resource.path,
-        headers: resource.headers || null
-    });
-}
-function subscribeToUpdates(sendMessage, resource) {
-    sendJSON(sendMessage, {
-        type: "turbopack-subscribe",
-        ...resource
-    });
-    return ()=>{
-        sendJSON(sendMessage, {
-            type: "turbopack-unsubscribe",
-            ...resource
-        });
-    };
-}
-function handleSocketConnected(sendMessage) {
-    for (const key of updateCallbackSets.keys()){
-        subscribeToUpdates(sendMessage, JSON.parse(key));
-    }
-}
-// we aggregate all pending updates until the issues are resolved
-const chunkListsWithPendingUpdates = new Map();
-function aggregateUpdates(msg) {
-    const key = resourceKey(msg.resource);
-    let aggregated = chunkListsWithPendingUpdates.get(key);
-    if (aggregated) {
-        aggregated.instruction = mergeChunkListUpdates(aggregated.instruction, msg.instruction);
-    } else {
-        chunkListsWithPendingUpdates.set(key, msg);
-    }
-}
-function applyAggregatedUpdates() {
-    if (chunkListsWithPendingUpdates.size === 0) return;
-    hooks.beforeRefresh();
-    for (const msg of chunkListsWithPendingUpdates.values()){
-        triggerUpdate(msg);
-    }
-    chunkListsWithPendingUpdates.clear();
-    finalizeUpdate();
-}
-function mergeChunkListUpdates(updateA, updateB) {
-    let chunks;
-    if (updateA.chunks != null) {
-        if (updateB.chunks == null) {
-            chunks = updateA.chunks;
-        } else {
-            chunks = mergeChunkListChunks(updateA.chunks, updateB.chunks);
-        }
-    } else if (updateB.chunks != null) {
-        chunks = updateB.chunks;
-    }
-    let merged;
-    if (updateA.merged != null) {
-        if (updateB.merged == null) {
-            merged = updateA.merged;
-        } else {
-            // Since `merged` is an array of updates, we need to merge them all into
-            // one, consistent update.
-            // Since there can only be `EcmascriptMergeUpdates` in the array, there is
-            // no need to key on the `type` field.
-            let update = updateA.merged[0];
-            for(let i = 1; i < updateA.merged.length; i++){
-                update = mergeChunkListEcmascriptMergedUpdates(update, updateA.merged[i]);
-            }
-            for(let i = 0; i < updateB.merged.length; i++){
-                update = mergeChunkListEcmascriptMergedUpdates(update, updateB.merged[i]);
-            }
-            merged = [
-                update
-            ];
-        }
-    } else if (updateB.merged != null) {
-        merged = updateB.merged;
-    }
-    return {
-        type: "ChunkListUpdate",
-        chunks,
-        merged
-    };
-}
-function mergeChunkListChunks(chunksA, chunksB) {
-    const chunks = {};
-    for (const [chunkPath, chunkUpdateA] of Object.entries(chunksA)){
-        const chunkUpdateB = chunksB[chunkPath];
-        if (chunkUpdateB != null) {
-            const mergedUpdate = mergeChunkUpdates(chunkUpdateA, chunkUpdateB);
-            if (mergedUpdate != null) {
-                chunks[chunkPath] = mergedUpdate;
-            }
-        } else {
-            chunks[chunkPath] = chunkUpdateA;
-        }
-    }
-    for (const [chunkPath, chunkUpdateB] of Object.entries(chunksB)){
-        if (chunks[chunkPath] == null) {
-            chunks[chunkPath] = chunkUpdateB;
-        }
-    }
-    return chunks;
-}
-function mergeChunkUpdates(updateA, updateB) {
-    if (updateA.type === "added" && updateB.type === "deleted" || updateA.type === "deleted" && updateB.type === "added") {
-        return undefined;
-    }
-    if (updateA.type === "partial") {
-        invariant(updateA.instruction, "Partial updates are unsupported");
-    }
-    if (updateB.type === "partial") {
-        invariant(updateB.instruction, "Partial updates are unsupported");
-    }
-    return undefined;
-}
-function mergeChunkListEcmascriptMergedUpdates(mergedA, mergedB) {
-    const entries = mergeEcmascriptChunkEntries(mergedA.entries, mergedB.entries);
-    const chunks = mergeEcmascriptChunksUpdates(mergedA.chunks, mergedB.chunks);
-    return {
-        type: "EcmascriptMergedUpdate",
-        entries,
-        chunks
-    };
-}
-function mergeEcmascriptChunkEntries(entriesA, entriesB) {
-    return {
-        ...entriesA,
-        ...entriesB
-    };
-}
-function mergeEcmascriptChunksUpdates(chunksA, chunksB) {
-    if (chunksA == null) {
-        return chunksB;
-    }
-    if (chunksB == null) {
-        return chunksA;
-    }
-    const chunks = {};
-    for (const [chunkPath, chunkUpdateA] of Object.entries(chunksA)){
-        const chunkUpdateB = chunksB[chunkPath];
-        if (chunkUpdateB != null) {
-            const mergedUpdate = mergeEcmascriptChunkUpdates(chunkUpdateA, chunkUpdateB);
-            if (mergedUpdate != null) {
-                chunks[chunkPath] = mergedUpdate;
-            }
-        } else {
-            chunks[chunkPath] = chunkUpdateA;
-        }
-    }
-    for (const [chunkPath, chunkUpdateB] of Object.entries(chunksB)){
-        if (chunks[chunkPath] == null) {
-            chunks[chunkPath] = chunkUpdateB;
-        }
-    }
-    if (Object.keys(chunks).length === 0) {
-        return undefined;
-    }
-    return chunks;
-}
-function mergeEcmascriptChunkUpdates(updateA, updateB) {
-    if (updateA.type === "added" && updateB.type === "deleted") {
-        // These two completely cancel each other out.
-        return undefined;
-    }
-    if (updateA.type === "deleted" && updateB.type === "added") {
-        const added = [];
-        const deleted = [];
-        const deletedModules = new Set(updateA.modules ?? []);
-        const addedModules = new Set(updateB.modules ?? []);
-        for (const moduleId of addedModules){
-            if (!deletedModules.has(moduleId)) {
-                added.push(moduleId);
-            }
-        }
-        for (const moduleId of deletedModules){
-            if (!addedModules.has(moduleId)) {
-                deleted.push(moduleId);
-            }
-        }
-        if (added.length === 0 && deleted.length === 0) {
-            return undefined;
-        }
-        return {
-            type: "partial",
-            added,
-            deleted
-        };
-    }
-    if (updateA.type === "partial" && updateB.type === "partial") {
-        const added = new Set([
-            ...updateA.added ?? [],
-            ...updateB.added ?? []
-        ]);
-        const deleted = new Set([
-            ...updateA.deleted ?? [],
-            ...updateB.deleted ?? []
-        ]);
-        if (updateB.added != null) {
-            for (const moduleId of updateB.added){
-                deleted.delete(moduleId);
-            }
-        }
-        if (updateB.deleted != null) {
-            for (const moduleId of updateB.deleted){
-                added.delete(moduleId);
-            }
-        }
-        return {
-            type: "partial",
-            added: [
-                ...added
-            ],
-            deleted: [
-                ...deleted
-            ]
-        };
-    }
-    if (updateA.type === "added" && updateB.type === "partial") {
-        const modules = new Set([
-            ...updateA.modules ?? [],
-            ...updateB.added ?? []
-        ]);
-        for (const moduleId of updateB.deleted ?? []){
-            modules.delete(moduleId);
-        }
-        return {
-            type: "added",
-            modules: [
-                ...modules
-            ]
-        };
-    }
-    if (updateA.type === "partial" && updateB.type === "deleted") {
-        // We could eagerly return `updateB` here, but this would potentially be
-        // incorrect if `updateA` has added modules.
-        const modules = new Set(updateB.modules ?? []);
-        if (updateA.added != null) {
-            for (const moduleId of updateA.added){
-                modules.delete(moduleId);
-            }
-        }
-        return {
-            type: "deleted",
-            modules: [
-                ...modules
-            ]
-        };
-    }
-    // Any other update combination is invalid.
-    return undefined;
-}
-function invariant(_, message) {
-    throw new Error(`Invariant: ${message}`);
-}
-const CRITICAL = [
-    "bug",
-    "error",
-    "fatal"
-];
-function compareByList(list, a, b) {
-    const aI = list.indexOf(a) + 1 || list.length;
-    const bI = list.indexOf(b) + 1 || list.length;
-    return aI - bI;
-}
-const chunksWithIssues = new Map();
-function emitIssues() {
-    const issues = [];
-    const deduplicationSet = new Set();
-    for (const [_, chunkIssues] of chunksWithIssues){
-        for (const chunkIssue of chunkIssues){
-            if (deduplicationSet.has(chunkIssue.formatted)) continue;
-            issues.push(chunkIssue);
-            deduplicationSet.add(chunkIssue.formatted);
-        }
-    }
-    sortIssues(issues);
-    hooks.issues(issues);
-}
-function handleIssues(msg) {
-    const key = resourceKey(msg.resource);
-    let hasCriticalIssues = false;
-    for (const issue of msg.issues){
-        if (CRITICAL.includes(issue.severity)) {
-            hasCriticalIssues = true;
-        }
-    }
-    if (msg.issues.length > 0) {
-        chunksWithIssues.set(key, msg.issues);
-    } else if (chunksWithIssues.has(key)) {
-        chunksWithIssues.delete(key);
-    }
-    emitIssues();
-    return hasCriticalIssues;
-}
-const SEVERITY_ORDER = [
-    "bug",
-    "fatal",
-    "error",
-    "warning",
-    "info",
-    "log"
-];
-const CATEGORY_ORDER = [
-    "parse",
-    "resolve",
-    "code generation",
-    "rendering",
-    "typescript",
-    "other"
-];
-function sortIssues(issues) {
-    issues.sort((a, b)=>{
-        const first = compareByList(SEVERITY_ORDER, a.severity, b.severity);
-        if (first !== 0) return first;
-        return compareByList(CATEGORY_ORDER, a.category, b.category);
-    });
-}
-const hooks = {
-    beforeRefresh: ()=>{},
-    refresh: ()=>{},
-    buildOk: ()=>{},
-    issues: (_issues)=>{}
-};
-function setHooks(newHooks) {
-    Object.assign(hooks, newHooks);
-}
-function handleSocketMessage(msg) {
-    sortIssues(msg.issues);
-    handleIssues(msg);
-    switch(msg.type){
-        case "issues":
-            break;
-        case "partial":
-            // aggregate updates
-            aggregateUpdates(msg);
-            break;
-        default:
-            // run single update
-            const runHooks = chunkListsWithPendingUpdates.size === 0;
-            if (runHooks) hooks.beforeRefresh();
-            triggerUpdate(msg);
-            if (runHooks) finalizeUpdate();
-            break;
-    }
-}
-function finalizeUpdate() {
-    hooks.refresh();
-    hooks.buildOk();
-    // This is used by the Next.js integration test suite to notify it when HMR
-    // updates have been completed.
-    // TODO: Only run this in test environments (gate by `process.env.__NEXT_TEST_MODE`)
-    if (globalThis.__NEXT_HMR_CB) {
-        globalThis.__NEXT_HMR_CB();
-        globalThis.__NEXT_HMR_CB = null;
-    }
-}
-function subscribeToChunkUpdate(chunkPath, sendMessage, callback) {
-    return subscribeToUpdate({
-        path: chunkPath
-    }, sendMessage, callback);
-}
-function subscribeToUpdate(resource, sendMessage, callback) {
-    // TODO(WEB-1465) Remove this backwards compat fallback once
-    // vercel/next.js#54586 is merged.
-    if (callback === undefined) {
-        callback = sendMessage;
-        sendMessage = __TURBOPACK__imported__module__$5b$turbopack$5d2f$browser$2f$dev$2f$hmr$2d$client$2f$websocket$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["sendMessage"];
-    }
-    const key = resourceKey(resource);
-    let callbackSet;
-    const existingCallbackSet = updateCallbackSets.get(key);
-    if (!existingCallbackSet) {
-        callbackSet = {
-            callbacks: new Set([
-                callback
-            ]),
-            unsubscribe: subscribeToUpdates(sendMessage, resource)
-        };
-        updateCallbackSets.set(key, callbackSet);
-    } else {
-        existingCallbackSet.callbacks.add(callback);
-        callbackSet = existingCallbackSet;
-    }
-    return ()=>{
-        callbackSet.callbacks.delete(callback);
-        if (callbackSet.callbacks.size === 0) {
-            callbackSet.unsubscribe();
-            updateCallbackSets.delete(key);
-        }
-    };
-}
-function triggerUpdate(msg) {
-    const key = resourceKey(msg.resource);
-    const callbackSet = updateCallbackSets.get(key);
-    if (!callbackSet) {
-        return;
-    }
-    for (const callback of callbackSet.callbacks){
-        callback(msg);
-    }
-    if (msg.type === "notFound") {
-        // This indicates that the resource which we subscribed to either does not exist or
-        // has been deleted. In either case, we should clear all update callbacks, so if a
-        // new subscription is created for the same resource, it will send a new "subscribe"
-        // message to the server.
-        // No need to send an "unsubscribe" message to the server, it will have already
-        // dropped the update stream before sending the "notFound" message.
-        updateCallbackSets.delete(key);
-    }
+;
+function Document() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$document$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Html"], {
+        lang: "en",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$document$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Head"], {}, void 0, false, {
+                fileName: "[project]/pages/_document.tsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("body", {
+                className: "antialiased",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$document$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Main"], {}, void 0, false, {
+                        fileName: "[project]/pages/_document.tsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$document$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["NextScript"], {}, void 0, false, {
+                        fileName: "[project]/pages/_document.tsx",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/_document.tsx",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/pages/_document.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
 }
 }}),
-"[project]/components/Header.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/pages/_app.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
 {
+__turbopack_esm__({
+    "default": (()=>App)
+});
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+;
+;
+function App({ Component, pageProps }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(Component, {
+        ...pageProps
+    }, void 0, false, {
+        fileName: "[project]/pages/_app.tsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, this);
+}
+}}),
+"[externals]/ [external] (next/head.js, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("next/head.js");
+
+module.exports = mod;
+}}),
+"[externals]/ [external] (react-social-icons, esm_import)": ((__turbopack_context__) => {
+"use strict";
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+const mod = await __turbopack_external_import__("react-social-icons");
+
+__turbopack_export_namespace__(mod);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, true);}),
+"[externals]/ [external] (framer-motion, esm_import)": ((__turbopack_context__) => {
+"use strict";
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+const mod = await __turbopack_external_import__("framer-motion");
+
+__turbopack_export_namespace__(mod);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, true);}),
+"[project]/components/Header.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>Header)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$react$2d$social$2d$icons$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_import__("[project]/node_modules/react-social-icons/dist/react-social-icons.js [client] (ecmascript) <module evaluation>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$component$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-social-icons/dist/component.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (react-social-icons, esm_import)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__,
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 ;
 function Header({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("header", {
         className: "sticky top-0 z-50 p-10 flex items-start justify-between max-w-7xl mx-auto xl:items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
                 /*Intitial setup of the animation*/ initial: {
                     x: -500,
                     opacity: 0,
@@ -582,24 +182,24 @@ function Header({}) {
                 /*this code makes it that the social icons on the top left header dont just fly into the screen too quick duration is in seconds I believe*/ transition: {
                     duration: 1
                 },
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                     className: "flex flex-row items-center space-x-9 ",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$component$2e$js__$5b$client$5d$__$28$ecmascript$29$__["SocialIcon"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
                             url: "https://github.com/ani-sivaa"
                         }, void 0, false, {
                             fileName: "[project]/components/Header.tsx",
                             lineNumber: 34,
                             columnNumber: 7
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$component$2e$js__$5b$client$5d$__$28$ecmascript$29$__["SocialIcon"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
                             url: "https://www.linkedin.com/in/anisiva/"
                         }, void 0, false, {
                             fileName: "[project]/components/Header.tsx",
                             lineNumber: 37,
                             columnNumber: 7
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$component$2e$js__$5b$client$5d$__$28$ecmascript$29$__["SocialIcon"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
                             url: "https://github.com/ani-sivaa"
                         }, void 0, false, {
                             fileName: "[project]/components/Header.tsx",
@@ -617,7 +217,7 @@ function Header({}) {
                 lineNumber: 12,
                 columnNumber: 5
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
                 initial: {
                     x: 500,
                     opacity: 0,
@@ -633,7 +233,7 @@ function Header({}) {
                 },
                 className: "flex flex-row items-center text-gray-300 cursor-pointer",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$social$2d$icons$2f$dist$2f$component$2e$js__$5b$client$5d$__$28$ecmascript$29$__["SocialIcon"], {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$social$2d$icons$2c$__esm_import$29$__["SocialIcon"], {
                         className: "cursor_pointer",
                         network: "email",
                         fgColor: "gray",
@@ -643,7 +243,7 @@ function Header({}) {
                         lineNumber: 65,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         className: "uppercase hidden md:inline-flex text-sm text-gray-400 ",
                         children: " Get In Touch"
                     }, void 0, false, {
@@ -664,27 +264,34 @@ function Header({}) {
         columnNumber: 3
     }, this);
 }
-_c = Header;
-var _c;
-__turbopack_refresh__.register(_c, "Header");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[externals]/ [external] (react-simple-typewriter, cjs)": (function(__turbopack_context__) {
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
+{
+const mod = __turbopack_external_require__("react-simple-typewriter");
+
+module.exports = mod;
 }}),
-"[project]/components/BackgroundCircles.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/components/BackgroundCircles.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function BackgroundCircles({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
         initial: {
             opacity: 0
         },
@@ -717,28 +324,28 @@ function BackgroundCircles({}) {
         },
         className: "relative flex justify-center items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "  absolute border border-[#dbd9aa] rounded-full h-[600px] w-[600px] mt-52 animate-pulse opacity-65 "
             }, void 0, false, {
                 fileName: "[project]/components/BackgroundCircles.tsx",
                 lineNumber: 22,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "absolute border border-[#c4c0c0] h-[400px]w=[400px] absolute mt-52 "
             }, void 0, false, {
                 fileName: "[project]/components/BackgroundCircles.tsx",
                 lineNumber: 23,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "rounded-full border border-[#333333] h-[600px]w=[600px] absolute mt-52"
             }, void 0, false, {
                 fileName: "[project]/components/BackgroundCircles.tsx",
                 lineNumber: 24,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "rounded-full border border-[#f93232] opacity-20 h-[400px]w=[400[x] absolute mt-52 animate-pulse"
             }, void 0, false, {
                 fileName: "[project]/components/BackgroundCircles.tsx",
@@ -752,34 +359,31 @@ function BackgroundCircles({}) {
         columnNumber: 5
     }, this);
 }
-_c = BackgroundCircles;
 const __TURBOPACK__default__export__ = BackgroundCircles;
-var _c;
-__turbopack_refresh__.register(_c, "BackgroundCircles");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/Hero.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/Hero.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>Hero)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$typewriter$2f$dist$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-simple-typewriter/dist/index.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/BackgroundCircles.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$simple$2d$typewriter$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react-simple-typewriter, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/BackgroundCircles.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [ssr] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__
+]);
+([__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
-var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
 function Hero({}) {
-    _s();
-    const [text, count] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$typewriter$2f$dist$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTypewriter"])({
+    const [text, count] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$simple$2d$typewriter$2c$__cjs$29$__["useTypewriter"])({
         words: [
             "Hi, my name is Anirudh Sivakumar",
             "I-love-to-eat-good-food.tsx",
@@ -788,15 +392,15 @@ function Hero({}) {
         loop: true,
         delaySpeed: 2000
     });
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$BackgroundCircles$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/Hero.tsx",
                 lineNumber: 21,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                 className: "relative rounded-full h-32 w-32 mx-auto object-cover",
                 src: "https://media.licdn.com/dms/image/v2/D5603AQHGL5oyMrU93A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718319210642?e=1738195200&v=beta&t=TX8nUs_HdgaljGTpI1k05ZCQOtNcBeT0-j4Q3yxY8Wk"
             }, void 0, false, {
@@ -804,10 +408,10 @@ function Hero({}) {
                 lineNumber: 22,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "z-20",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
                         className: "text-sm uppercase text-gray-500 pb-2 tracking-[15px]",
                         children: "Software Engineer"
                     }, void 0, false, {
@@ -815,10 +419,10 @@ function Hero({}) {
                         lineNumber: 27,
                         columnNumber: 13
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
                         className: "text-5xl lg:text-3xl font-semibold px-10",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                 className: "mr-3",
                                 children: text
                             }, void 0, false, {
@@ -826,7 +430,7 @@ function Hero({}) {
                                 lineNumber: 31,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$typewriter$2f$dist$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Cursor"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$simple$2d$typewriter$2c$__cjs$29$__["Cursor"], {
                                 cursorColor: "#F7AB0A"
                             }, void 0, false, {
                                 fileName: "[project]/components/Hero.tsx",
@@ -839,12 +443,12 @@ function Hero({}) {
                         lineNumber: 30,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "pt-50",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "#about",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                     className: "heroButton",
                                     children: "About"
                                 }, void 0, false, {
@@ -857,9 +461,9 @@ function Hero({}) {
                                 lineNumber: 36,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "#Experience",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                     className: "heroButton",
                                     children: "Experience"
                                 }, void 0, false, {
@@ -872,9 +476,9 @@ function Hero({}) {
                                 lineNumber: 39,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "#Skills",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                     className: "heroButton",
                                     children: "Skills"
                                 }, void 0, false, {
@@ -887,9 +491,9 @@ function Hero({}) {
                                 lineNumber: 42,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "#Projects",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                     className: "heroButton",
                                     children: "Projects"
                                 }, void 0, false, {
@@ -921,35 +525,29 @@ function Hero({}) {
         columnNumber: 5
     }, this);
 }
-_s(Hero, "5spqq7+yLq/cLskXuVTIzTmtjlw=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$typewriter$2f$dist$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTypewriter"]
-    ];
-});
-_c = Hero;
-var _c;
-__turbopack_refresh__.register(_c, "Hero");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/About.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/About.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>About)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function About({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                 className: "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl",
                 children: "About"
             }, void 0, false, {
@@ -957,7 +555,7 @@ function About({}) {
                 lineNumber: 9,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].img, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].img, {
                 initial: {
                     x: -200,
                     opacity: 0
@@ -982,15 +580,15 @@ function About({}) {
                 lineNumber: 13,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "space-y-10 px-0 md:px-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
                         className: "text-4xl font-semibold",
                         children: [
                             "Here is a",
                             " ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                 className: '="underline decoratin-[#F7AB0A]/50',
                                 children: " little"
                             }, void 0, false, {
@@ -1006,7 +604,7 @@ function About({}) {
                         lineNumber: 33,
                         columnNumber: 17
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         className: "text-sm",
                         children: "Hi, I'm Anirudh Sivakumar, an undergraduate student pursuing a Computer Science B.S. degree. I'm passionate about Machine Learning and Full-Stack Development, which is reflected in the labs and hands-on experience I've gained over the years. With a strong foundation in both theoretical and practical aspects of software engineering, I have explored various projects and roles, from embedded systems to machine learning applications. I continue to expand my knowledge and skills in these areas as I work towards my career goals."
                     }, void 0, false, {
@@ -1027,30 +625,29 @@ function About({}) {
         columnNumber: 5
     }, this);
 }
-_c = About;
-var _c;
-__turbopack_refresh__.register(_c, "About");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/ExperienceCard.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/ExperienceCard.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>ExperienceCard)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function ExperienceCard({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("article", {
         className: "flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px]  snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].img, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].img, {
                 initial: {
                     y: -100,
                     opacity: 0
@@ -1073,10 +670,10 @@ function ExperienceCard({}) {
                 lineNumber: 11,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "px-0 md:px-10 text-center md:text-left",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
                         className: "text-2xl font-bold mt-1",
                         children: "Machine Learning & Large Language Models Researcher @ AIEA Lab"
                     }, void 0, false, {
@@ -1084,7 +681,7 @@ function ExperienceCard({}) {
                         lineNumber: 32,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         className: "text-lg text-gray-400",
                         children: "University of California, Santa Cruz"
                     }, void 0, false, {
@@ -1092,10 +689,10 @@ function ExperienceCard({}) {
                         lineNumber: 35,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "flex space-x-2 my-4 justify-center md:justify-start",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 className: "h-10 w-10 rounded-full",
                                 src: "data:image/webp;base64,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",
                                 alt: "Prologswi"
@@ -1104,7 +701,7 @@ function ExperienceCard({}) {
                                 lineNumber: 40,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 className: "h-10 w-10 rounded-full",
                                 src: "data:image/png;base64,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",
                                 alt: "OpenAI"
@@ -1113,7 +710,7 @@ function ExperienceCard({}) {
                                 lineNumber: 45,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 className: "h-10 w-10 rounded-full",
                                 src: "data:image/jpeg;base64,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",
                                 alt: "Python"
@@ -1128,7 +725,7 @@ function ExperienceCard({}) {
                         lineNumber: 38,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         className: "uppercase py-5 text-gray-300",
                         children: "Started: September 2024 - Present"
                     }, void 0, false, {
@@ -1136,17 +733,17 @@ function ExperienceCard({}) {
                         lineNumber: 59,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("ul", {
                         className: "list-disc space-y-4 ml-5 text-lg",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
                                 children: "Working with SWI-Prolog to understand LLM logic-based reasoning."
                             }, void 0, false, {
                                 fileName: "[project]/components/ExperienceCard.tsx",
                                 lineNumber: 65,
                                 columnNumber: 9
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
                                 children: "Utilized OpenAI API to run queries and examples in SWI-Prolog."
                             }, void 0, false, {
                                 fileName: "[project]/components/ExperienceCard.tsx",
@@ -1172,30 +769,29 @@ function ExperienceCard({}) {
         columnNumber: 5
     }, this);
 }
-_c = ExperienceCard;
-var _c;
-__turbopack_refresh__.register(_c, "ExperienceCard");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/WorkExperience.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/WorkExperience.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ExperienceCard.tsx [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ExperienceCard.tsx [ssr] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__
+]);
+([__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function WorkExperience({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "h-screen flex flex-col items-center text-left max-w-full px-10 justify-start mx-auto relative",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                 className: "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl",
                 children: "Experience"
             }, void 0, false, {
@@ -1203,22 +799,22 @@ function WorkExperience({}) {
                 lineNumber: 9,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "mt-28 w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                     className: "flex items-center space-x-5",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/components/WorkExperience.tsx",
                             lineNumber: 17,
                             columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/components/WorkExperience.tsx",
                             lineNumber: 18,
                             columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ExperienceCard$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/components/WorkExperience.tsx",
                             lineNumber: 19,
                             columnNumber: 13
@@ -1241,31 +837,30 @@ function WorkExperience({}) {
         columnNumber: 7
     }, this);
 }
-_c = WorkExperience;
 const __TURBOPACK__default__export__ = WorkExperience;
-var _c;
-__turbopack_refresh__.register(_c, "WorkExperience");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/Skill.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/Skill.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function Skill({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "group relative flex cursor-pointer",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].img, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].img, {
                 initial: {
                     x: 150
                 },
@@ -1284,11 +879,11 @@ function Skill({}) {
                 lineNumber: 8,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "absolute opacity-0 group-hover:opacity-80 transition duration-300  ease-in-out group-hover:bg-white h-24 w-24 md:h-24 md:w-24 md:h-28 xl:w-28 xl:h-28 rounded-full z-0",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                     className: "flex items-center justify-center h-full",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         className: "text-3xl font-bold text-black opacity-100",
                         children: "100%"
                     }, void 0, false, {
@@ -1313,30 +908,30 @@ function Skill({}) {
         columnNumber: 5
     }, this);
 }
-_c = Skill;
 const __TURBOPACK__default__export__ = Skill;
-var _c;
-__turbopack_refresh__.register(_c, "Skill");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/Skills.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/Skills.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Skill.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Skill.tsx [ssr] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 ;
 function Skills({}) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
         initial: {
             opacity: 0
         },
@@ -1348,7 +943,7 @@ function Skills({}) {
         },
         className: "h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                 className: "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl",
                 children: "Skills"
             }, void 0, false, {
@@ -1356,7 +951,7 @@ function Skills({}) {
                 lineNumber: 12,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                 className: "absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm",
                 children: "Hover over a skill for current proficiency"
             }, void 0, false, {
@@ -1364,85 +959,85 @@ function Skills({}) {
                 lineNumber: 13,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-4 gap-5",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 17,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 18,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 19,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 20,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 21,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 22,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 23,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 24,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 25,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 26,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 27,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 28,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 29,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 30,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 31,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skill$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/Skills.tsx",
                         lineNumber: 32,
                         columnNumber: 9
@@ -1460,62 +1055,50 @@ function Skills({}) {
         columnNumber: 5
     }, this);
 }
-_c = Skills;
 const __TURBOPACK__default__export__ = Skills;
-var _c;
-__turbopack_refresh__.register(_c, "Skills");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/Projects.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/components/Projects.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (framer-motion, esm_import)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 function Projects({}) {
-    // Define your projects with more detailed information
     const projects = [
-        {
-            title: "NLP Search + Churn Prediction Model",
-            description: "AI solutions for e-commerce websites presented for GDXinc. I was chosen out of 300 applicants to present my NLP Search and churn prediction model solution.",
-            imageSrc: "https://i.ibb.co/NK0wwBL/IMG-7653.jpg"
-        },
-        {
-            title: "Letmetalktoahuman.ai",
-            description: "CalHacks 2024 Winner, integrated VAPI for a hyper relasitc voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
-            imageSrc: "https://i.ibb.co/4g5hD2r/IMG-7654.jpg"
-        },
-        {
-            title: "Image Recognition for Quality Control",
-            description: "Built an image recognition system to identify defects in products on the assembly line, increasing production efficiency.",
-            imageSrc: "https://i.ibb.co/ZVZ7JYX/IMG-7655.jpg"
-        }
-    ];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        1,
+        2,
+        3,
+        4,
+        5
+    ]; // List of projects
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                 className: "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl",
                 children: "Projects"
             }, void 0, false, {
                 fileName: "[project]/components/Projects.tsx",
-                lineNumber: 32,
+                lineNumber: 11,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20",
-                children: projects.map((project, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: projects.map((project, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].img, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].img, {
                                 initial: {
                                     y: -300,
                                     opacity: 0
@@ -1530,75 +1113,74 @@ function Projects({}) {
                                 viewport: {
                                     once: true
                                 },
-                                src: project.imageSrc,
+                                src: "https://i.ibb.co/NK0wwBL/IMG-7653.jpg",
                                 alt: `Project ${i + 1}`,
                                 className: "relative rounded-full h-64 w-64 mx-auto object-cover "
                             }, void 0, false, {
                                 fileName: "[project]/components/Projects.tsx",
-                                lineNumber: 44,
+                                lineNumber: 23,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "text-center max-w-4xl",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
                                         className: "text-4xl font-semibold text-center",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 className: "underline decoration-[#FFFDD0]",
                                                 children: [
                                                     "Project ",
                                                     i + 1,
                                                     " of ",
                                                     projects.length,
-                                                    ":",
-                                                    " "
+                                                    ":"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/Projects.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 39,
                                                 columnNumber: 17
                                             }, this),
-                                            project.title
+                                            " NLP Search + Churn Prediction Model"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Projects.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 38,
                                         columnNumber: 15
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                         className: "mt-2 text-lg text-center md:text-left",
-                                        children: project.description
+                                        children: "AI solutions for e-commerce websites presented for GDXinc. I was chosen out of 300 applicants to present my NLP Search and churn prediction model solution."
                                     }, void 0, false, {
                                         fileName: "[project]/components/Projects.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 43,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Projects.tsx",
-                                lineNumber: 58,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, i, true, {
                         fileName: "[project]/components/Projects.tsx",
-                        lineNumber: 39,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/Projects.tsx",
-                lineNumber: 37,
+                lineNumber: 16,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"
             }, void 0, false, {
                 fileName: "[project]/components/Projects.tsx",
-                lineNumber: 74,
+                lineNumber: 54,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].img, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].img, {
                 src: "https://www.freeiconspng.com/thumbs/white-arrow-png/right-white-arrow-png-20.png",
                 alt: "Scroll Right",
                 className: "absolute right-10 bottom-50 h-10 w-10 cursor-pointer",
@@ -1615,57 +1197,64 @@ function Projects({}) {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/Projects.tsx",
-                lineNumber: 77,
-                columnNumber: 7
+                lineNumber: 56,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Projects.tsx",
-        lineNumber: 30,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
-_c = Projects;
 const __TURBOPACK__default__export__ = Projects;
-var _c;
-__turbopack_refresh__.register(_c, "Projects");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/components/ContactMe.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[externals]/ [external] (react-hook-form, esm_import)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+const mod = await __turbopack_external_import__("react-hook-form");
+
+__turbopack_export_namespace__(mod);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, true);}),
+"[project]/components/ContactMe.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-hook-form/dist/index.esm.mjs [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$PhoneIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PhoneIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/PhoneIcon.js [client] (ecmascript) <export default as PhoneIcon>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$EnvelopeIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__EnvelopeIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/EnvelopeIcon.js [client] (ecmascript) <export default as EnvelopeIcon>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$MapPinIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPinIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/MapPinIcon.js [client] (ecmascript) <export default as MapPinIcon>");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$hook$2d$form$2c$__esm_import$29$__ = __turbopack_import__("[externals]/ [external] (react-hook-form, esm_import)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$PhoneIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__PhoneIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/PhoneIcon.js [ssr] (ecmascript) <export default as PhoneIcon>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$EnvelopeIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__EnvelopeIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/EnvelopeIcon.js [ssr] (ecmascript) <export default as EnvelopeIcon>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$MapPinIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPinIcon$3e$__ = __turbopack_import__("[project]/node_modules/@heroicons/react/24/solid/esm/MapPinIcon.js [ssr] (ecmascript) <export default as MapPinIcon>");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$hook$2d$form$2c$__esm_import$29$__
+]);
+([__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$hook$2d$form$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
-var _s = __turbopack_refresh__.signature();
 ;
 ;
 function ContactMe({}) {
-    _s();
-    const { register, handleSubmit } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"])();
+    const { register, handleSubmit } = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2d$hook$2d$form$2c$__esm_import$29$__["useForm"])();
     const onSubmit = (formData)=>{
         const subject = encodeURIComponent(formData.subject);
         const body = encodeURIComponent(`Hi, my name is ${formData.name}. \n ${formData.message} \n (${formData.email} (${formData.role}))`);
         window.location.href = `mailto:anisiva213@gmail.com?subject=${subject}&body=${body}`;
         console.log(formData); // Debugging: Log form data
     };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "flex flex-col items-center space-y-4 mb-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
                         className: "uppercase tracking-[20px] text-gray-500 text-2xl",
                         children: "Contact Me"
                     }, void 0, false, {
@@ -1673,12 +1262,12 @@ function ContactMe({}) {
                         lineNumber: 31,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
                         className: "text-4xl font-semibold text-center",
                         children: [
                             "I got what you need.",
                             " ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                 className: "decoration-[#FFFDD0] underline",
                                 children: "Let's talk."
                             }, void 0, false, {
@@ -1698,23 +1287,23 @@ function ContactMe({}) {
                 lineNumber: 30,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "flex flex-col space-y-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "space-y-5",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "flex items-center space-x-5 justify-center",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$PhoneIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PhoneIcon$3e$__["PhoneIcon"], {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$PhoneIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__PhoneIcon$3e$__["PhoneIcon"], {
                                         className: "h-7 w-7 text-[#FFFDD0]"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ContactMe.tsx",
                                         lineNumber: 45,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                         className: "text-2xl",
                                         children: "+1(925)548-0122"
                                     }, void 0, false, {
@@ -1728,17 +1317,17 @@ function ContactMe({}) {
                                 lineNumber: 44,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "flex items-center space-x-5 justify-center",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$EnvelopeIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__EnvelopeIcon$3e$__["EnvelopeIcon"], {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$EnvelopeIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__EnvelopeIcon$3e$__["EnvelopeIcon"], {
                                         className: "h-7 w-7 text-[#FFFDD0]"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ContactMe.tsx",
                                         lineNumber: 50,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                         className: "text-2xl",
                                         children: "anisiva213@gmail.com"
                                     }, void 0, false, {
@@ -1752,17 +1341,17 @@ function ContactMe({}) {
                                 lineNumber: 49,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "flex items-center space-x-5 justify-center",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$MapPinIcon$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPinIcon$3e$__["MapPinIcon"], {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$solid$2f$esm$2f$MapPinIcon$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPinIcon$3e$__["MapPinIcon"], {
                                         className: "h-7 w-7 text-[#FFFDD0]"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ContactMe.tsx",
                                         lineNumber: 55,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                         className: "text-2xl",
                                         children: "Santa Cruz, CA"
                                     }, void 0, false, {
@@ -1782,14 +1371,14 @@ function ContactMe({}) {
                         lineNumber: 43,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
                         onSubmit: handleSubmit(onSubmit),
                         className: "flex flex-col space-y-2 w-fit mx-auto",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 className: "flex space-x-2",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                                         ...register("name", {
                                             required: true
                                         }),
@@ -1801,7 +1390,7 @@ function ContactMe({}) {
                                         lineNumber: 66,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                                         ...register("email", {
                                             required: true
                                         }),
@@ -1813,12 +1402,12 @@ function ContactMe({}) {
                                         lineNumber: 72,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("select", {
                                         ...register("role"),
                                         className: "contactInput",
                                         defaultValue: "",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("option", {
                                                 value: "",
                                                 disabled: true,
                                                 children: "I am a..."
@@ -1827,7 +1416,7 @@ function ContactMe({}) {
                                                 lineNumber: 83,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("option", {
                                                 value: "recruiter",
                                                 children: "Recruiter"
                                             }, void 0, false, {
@@ -1835,7 +1424,7 @@ function ContactMe({}) {
                                                 lineNumber: 86,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("option", {
                                                 value: "student",
                                                 children: "Student"
                                             }, void 0, false, {
@@ -1843,7 +1432,7 @@ function ContactMe({}) {
                                                 lineNumber: 87,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("option", {
                                                 value: "other",
                                                 children: "Other"
                                             }, void 0, false, {
@@ -1863,7 +1452,7 @@ function ContactMe({}) {
                                 lineNumber: 65,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                                 ...register("subject", {
                                     required: true
                                 }),
@@ -1875,7 +1464,7 @@ function ContactMe({}) {
                                 lineNumber: 91,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("textarea", {
                                 ...register("message", {
                                     required: true
                                 }),
@@ -1886,7 +1475,7 @@ function ContactMe({}) {
                                 lineNumber: 97,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                 type: "submit",
                                 className: "bg-[#FFFDD0] py-5 px-10 rounded-md text-black font-bold",
                                 children: "Submit"
@@ -1914,37 +1503,37 @@ function ContactMe({}) {
         columnNumber: 5
     }, this);
 }
-_s(ContactMe, "zkd3JmxRK/AmyiWtSfciHeYO5Zk=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"]
-    ];
-});
-_c = ContactMe;
 const __TURBOPACK__default__export__ = ContactMe;
-var _c;
-__turbopack_refresh__.register(_c, "ContactMe");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[project]/pages/index.tsx [client] (ecmascript)": ((__turbopack_context__) => {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/pages/index.tsx [ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: require } = __turbopack_context__;
-{
+var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, a: __turbopack_async_module__, x: __turbopack_external_require__, y: __turbopack_external_import__, z: require } = __turbopack_context__;
+__turbopack_async_module__(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 __turbopack_esm__({
     "default": (()=>Home)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/head.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Header.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Hero.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/About.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/WorkExperience.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Skills.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Projects.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ContactMe.tsx [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$next$2f$head$2e$js$2c$__cjs$29$__ = __turbopack_import__("[externals]/ [external] (next/head.js, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Header.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Hero.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/About.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/WorkExperience.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Skills.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/Projects.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/ContactMe.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [ssr] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__
+]);
+([__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
 ;
 ;
 ;
@@ -1956,11 +1545,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link
 ;
 ;
 function Home() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         className: "bg-[rgb(17,17,17)] text-white h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$next$2f$head$2e$js$2c$__cjs$29$__["default"], {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
                     children: "Anirudh's Portfolio"
                 }, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
@@ -1972,15 +1561,15 @@ function Home() {
                 lineNumber: 17,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Header$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/pages/index.tsx",
                 lineNumber: 21,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 id: "hero",
                 className: "snap-start",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Hero$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 25,
                     columnNumber: 9
@@ -1990,10 +1579,10 @@ function Home() {
                 lineNumber: 24,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 id: "about",
                 className: "snap-center",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$About$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 30,
                     columnNumber: 9
@@ -2003,10 +1592,10 @@ function Home() {
                 lineNumber: 29,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 id: "Experience",
                 className: "snap-center",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WorkExperience$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 35,
                     columnNumber: 9
@@ -2016,10 +1605,10 @@ function Home() {
                 lineNumber: 34,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 id: "Skills",
                 className: "snap-start",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Skills$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 40,
                     columnNumber: 9
@@ -2029,10 +1618,10 @@ function Home() {
                 lineNumber: 39,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 id: "Projects",
                 className: "snap-start",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Projects$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 45,
                     columnNumber: 8
@@ -2042,9 +1631,9 @@ function Home() {
                 lineNumber: 44,
                 columnNumber: 8
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
                 className: "snap-start",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactMe$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/pages/index.tsx",
                     lineNumber: 51,
                     columnNumber: 9
@@ -2054,13 +1643,13 @@ function Home() {
                 lineNumber: 50,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "#hero",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("footer", {
                     className: "sticky bottom-5 w-full cursor-pointer",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "flex items-center justify-center",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                             className: "h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer",
                             src: "https://media.licdn.com/dms/image/v2/D5603AQHGL5oyMrU93A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718319210642?e=1738195200&v=beta&t=TX8nUs_HdgaljGTpI1k05ZCQOtNcBeT0-j4Q3yxY8Wk",
                             alt: "Homepagebutton"
@@ -2091,41 +1680,9 @@ function Home() {
         columnNumber: 5
     }, this);
 }
-_c = Home;
-var _c;
-__turbopack_refresh__.register(_c, "Home");
-if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
-    __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
-}
-}}),
-"[next]/entry/page-loader.ts { PAGE => \"[project]/pages/index.tsx [client] (ecmascript)\" } [client] (ecmascript)": (function(__turbopack_context__) {
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, m: module, e: exports, t: require } = __turbopack_context__;
-{
-const PAGE_PATH = "/";
-(window.__NEXT_P = window.__NEXT_P || []).push([
-    PAGE_PATH,
-    ()=>{
-        return __turbopack_require__("[project]/pages/index.tsx [client] (ecmascript)");
-    }
-]);
-// @ts-expect-error module.hot exists
-if (module.hot) {
-    // @ts-expect-error module.hot exists
-    module.hot.dispose(function() {
-        window.__NEXT_P.push([
-            PAGE_PATH
-        ]);
-    });
-}
-}}),
-"[project]/pages/index (hmr-entry)": ((__turbopack_context__) => {
-"use strict";
+};
 
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, m: module, t: require } = __turbopack_context__;
-{
-__turbopack_require__("[next]/entry/page-loader.ts { PAGE => \"[project]/pages/index.tsx [client] (ecmascript)\" } [client] (ecmascript)");
-}}),
-}]);
-
-//# sourceMappingURL=%5Broot%20of%20the%20server%5D__f558af._.js.map
+//# sourceMappingURL=%5Broot%20of%20the%20server%5D__b9112d._.js.map

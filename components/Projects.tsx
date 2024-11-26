@@ -1,9 +1,30 @@
 import React from 'react';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
+
 type Props = {};
 
 function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5]; // List of projects
+  // Define your projects with more detailed information
+  const projects = [
+    {
+      title: "NLP Search + Churn Prediction Model",
+      description:
+        "AI solutions for e-commerce websites presented for GDXinc. I was chosen out of 300 applicants to present my NLP Search and churn prediction model solution.",
+      imageSrc: "https://i.ibb.co/NK0wwBL/IMG-7653.jpg",
+    },
+    {
+      title: "Letmetalktoahuman.ai",
+      description:
+        "CalHacks 2024 Winner, integrated VAPI for a hyper relasitc voice agent that gets past automated customer support menus and then forwards the call to a user once a REAL representative is on the line. Utilized GROQ for AI Inference, VAPI for the Voice Agent, and React for the frontend.",
+      imageSrc: "https://i.ibb.co/4g5hD2r/IMG-7654.jpg",
+    },
+    {
+      title: "Image Recognition for Quality Control",
+      description:
+        "Built an image recognition system to identify defects in products on the assembly line, increasing production efficiency.",
+      imageSrc: "https://i.ibb.co/ZVZ7JYX/IMG-7655.jpg",
+    },
+  ];
 
   return (
     <div className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
@@ -21,14 +42,14 @@ function Projects({}: Props) {
           >
             {/* Project Image */}
             <motion.img
-            initial={{
-                y:-300,
+              initial={{
+                y: -300,
                 opacity: 0,
-            }}
-            transition={{duration: 1.2}}
-            whileInView={{opacity: 1, y:0}}
-            viewport={{once: true}}
-              src="https://i.ibb.co/NK0wwBL/IMG-7653.jpg"
+              }}
+              transition={{ duration: 1.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              src={project.imageSrc}
               alt={`Project ${i + 1}`}
               className="relative rounded-full h-64 w-64 mx-auto object-cover "
             />
@@ -36,14 +57,13 @@ function Projects({}: Props) {
             {/* Project Description */}
             <div className="text-center max-w-4xl">
               <h4 className="text-4xl font-semibold text-center">
-                <span className='underline decoration-[#FFFDD0]'>
-                Project {i + 1} of {projects.length}: 
-                </span> NLP Search + Churn Prediction Model
+                <span className="underline decoration-[#FFFDD0]">
+                  Project {i + 1} of {projects.length}:{" "}
+                </span>
+                {project.title}
               </h4>
               <p className="mt-2 text-lg text-center md:text-left">
-                AI solutions for e-commerce websites presented for GDXinc. I
-                was chosen out of 300 applicants to present my NLP Search and
-                churn prediction model solution.
+                {project.description}
               </p>
             </div>
           </div>
@@ -52,8 +72,9 @@ function Projects({}: Props) {
 
       {/* Background Design */}
       <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
-        {/* Bouncing Arrow */}
-            <motion.img
+      
+      {/* Bouncing Arrow */}
+      <motion.img
         src="https://www.freeiconspng.com/thumbs/white-arrow-png/right-white-arrow-png-20.png"
         alt="Scroll Right"
         className="absolute right-10 bottom-50 h-10 w-10 cursor-pointer"

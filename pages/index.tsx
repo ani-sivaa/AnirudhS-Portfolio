@@ -7,6 +7,7 @@ import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects"
 import ContactMe from "../components/ContactMe"
+import Link from "next/link";
 
 export default function Home() {
   
@@ -49,6 +50,18 @@ export default function Home() {
       <section className="snap-start">
         <ContactMe/>
       </section>
+      <Link href="#hero">
+        <footer className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <img
+            className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+            src="https://media.licdn.com/dms/image/v2/D5603AQHGL5oyMrU93A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718319210642?e=1738195200&v=beta&t=TX8nUs_HdgaljGTpI1k05ZCQOtNcBeT0-j4Q3yxY8Wk"
+            alt="Homepagebutton"
+            />
+
+          </div>
+        </footer>
+      </Link>
     </div>
   );
 }

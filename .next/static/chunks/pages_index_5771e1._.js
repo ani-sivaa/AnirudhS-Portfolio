@@ -12,7 +12,7 @@
     "static/chunks/node_modules_react-dom_f14d04._.js",
     "static/chunks/node_modules_react-social-icons_dist_6efcda._.js",
     "static/chunks/node_modules_framer-motion_dist_es_75a093._.js",
-    "static/chunks/node_modules_4cb705._.js"
+    "static/chunks/node_modules_f7559a._.js"
   ],
   "source": "entry"
 });
