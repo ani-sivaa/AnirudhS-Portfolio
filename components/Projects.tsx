@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-type Props = {};
 
-function Projects({}: Props) {
+
+function Projects() {
   // Define your projects with more detailed information
   const projects = [
     

@@ -1,9 +1,9 @@
 import React from 'react';
 import{motion} from 'framer-motion'
 
-type Props = {};
 
-export default function About({}: Props) {
+
+export default function About() {
   return (
     <div className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly items-center'> 
         <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
@@ -36,7 +36,7 @@ export default function About({}: Props) {
                      Background
                 </h4>
                 <p className='text-sm'>
-                Hi, I'm Anirudh Sivakumar, an undergraduate student pursuing a Computer Science B.S. degree. I'm passionate about Machine Learning and Full-Stack Development, which is reflected in the labs and hands-on experience I've gained over the years.
+                Hi, I&apos;m Anirudh Sivakumar, an undergraduate student pursuing a Computer Science B.S. degree. I&apos;m passionate about Machine Learning and Full-Stack Development, which is reflected in the labs and hands-on experience I&apos;ve gained over the years.
 
                 With a strong foundation in both theoretical and practical aspects of software engineering, I have explored various projects and roles, from embedded systems to machine learning applications. I continue to expand my knowledge and skills in these areas as I work towards my career goals.
                 </p>

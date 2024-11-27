@@ -2,7 +2,6 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
-type Props = {};
 
 type Inputs = {
   name: string;
@@ -12,7 +11,7 @@ type Inputs = {
   role?: string;
 };
 
-function ContactMe({}: Props) {
+function ContactMe() {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     const subject = encodeURIComponent(formData.subject);
@@ -33,7 +32,7 @@ function ContactMe({}: Props) {
         </h3>
         <h4 className="text-4xl font-semibold text-center">
           I got what you need.{" "}
-          <span className="decoration-[#FFFDD0] underline">Let's talk.</span>
+          <span className="decoration-[#FFFDD0] underline">Let&apos;s talk.</span>
         </h4>
       </div>
 

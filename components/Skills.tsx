@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Skill from "../components/Skill";
 
-type Props = {};
 
-function Skills({}: Props) {
+
+function Skills() {
   const skills = [
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png",
