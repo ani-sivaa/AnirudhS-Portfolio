@@ -62,15 +62,22 @@ export default function Header({}: Props) {
     
     
     className="flex flex-row items-center text-gray-300 cursor-pointer">
- <a href="#contact" className="flex items-center">
-    <SocialIcon 
-        className='cursor_pointer'
-        network='email'
+ <div className="flex items-center">
+    <SocialIcon
+        className="cursor_pointer"
+        network="email"
         fgColor="gray"
-        bgColor='transparent'
+        bgColor="transparent"
+        url="#contact" // Use this to set the anchor link directly
     />
-    <p className="uppercase hidden md:inline-flex text-sm text-gray-400 ml-2">Get In Touch</p>
-</a>
+    <p
+        onClick={() => (window.location.href = "#contact")} // Optional: handle navigation here
+        className="uppercase hidden md:inline-flex text-sm text-gray-400 ml-2 cursor-pointer"
+    >
+        Get In Touch
+    </p>
+</div>
+
 
     </motion.div>
     

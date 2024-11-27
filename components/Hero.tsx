@@ -5,7 +5,7 @@ import Link from 'next/link'
 type Props = {}
 
 export default function Hero({}: Props) {
-  const[text,count] = useTypewriter({
+  const[text] = useTypewriter({
     words:[
         "Hi, my name is Anirudh Sivakumar",
         "Take-A-Look-At-My-Portfolio.tsx",
