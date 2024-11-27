@@ -8,11 +8,11 @@ export default function Hero({}: Props) {
   const[text,count] = useTypewriter({
     words:[
         "Hi, my name is Anirudh Sivakumar",
-        "Please-Hire-Me.tsx",
+        "Take-A-Look-At-My-Portfolio.tsx",
         "<LookingFor2025Internships :)/>",
     ],
     loop: true,
-    delaySpeed:2000,
+    delaySpeed:1000,
 
   });
   

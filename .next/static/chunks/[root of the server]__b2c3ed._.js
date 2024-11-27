@@ -790,11 +790,11 @@ function Hero({}) {
     const [text, count] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$simple$2d$typewriter$2f$dist$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useTypewriter"])({
         words: [
             "Hi, my name is Anirudh Sivakumar",
-            "Please-Hire-Me.tsx",
+            "Take-A-Look-At-My-Portfolio.tsx",
             "<LookingFor2025Internships :)/>"
         ],
         loop: true,
-        delaySpeed: 2000
+        delaySpeed: 1000
     });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden",
