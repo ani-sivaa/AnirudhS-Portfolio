@@ -1,40 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Anirudh Sivakumar's Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website repository! This website showcases my projects, skills, and professional journey in software development and machine learning.
 
-First, run the development server:
+## 🚀 Technologies Used
+
+- **Framework**: Next.js with TypeScript
+- **Styling**: Tailwind CSS for modern, responsive design
+- **Content Management**: Headless CMS for dynamic content updates
+- **Performance**: Optimized loading and animations
+
+## ✨ Features
+
+- Responsive design that works seamlessly across all devices
+- Dynamic project showcase with detailed case studies
+- Blog section for sharing technical insights and experiences
+- Modern UI with smooth animations and transitions
+- Easy content updates through headless CMS integration
+
+## 🛠️ Local Development
+
+To run this project locally:
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+├── components/     # Reusable UI components
+├── pages/          # Next.js pages and API routes
+├── public/         # Static assets
+├── styles/         # Global styles and Tailwind config
+└── lib/           # Utility functions and CMS integration
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## 📝 Content Updates
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The website content is managed through a headless CMS, making it easy to:
+- Update project showcases
+- Add new blog posts
+- Modify professional information
 
-## Learn More
+## 🔗 Connect With Me
 
-To learn more about Next.js, take a look at the following resources:
+- [LinkedIn](https://linkedin.com/in/anisiva)
+- [GitHub](https://github.com/ani-sivaa)
+- Email: anisiva213@gmail.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+This project is MIT licensed. Feel free to draw inspiration from the code structure, but please avoid direct copying of personal content and design elements.
