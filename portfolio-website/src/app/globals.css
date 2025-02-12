@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #2B2B2B;
+  --foreground: #E0E0E0;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply text-[#0FF0FC] drop-shadow-[0_0_2px_#0FF0FC];
+  }
+
+  .neon-text-blue {
+    @apply text-[#00FFFF] drop-shadow-[0_0_2px_#00FFFF];
+  }
+
+  .neon-text-green {
+    @apply text-[#39FF14] drop-shadow-[0_0_2px_#39FF14];
+  }
+
+  .neon-text-yellow {
+    @apply text-[#FFFF00] drop-shadow-[0_0_2px_#FFFF00];
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #0FF0FC) drop-shadow(0 0 10px #0FF0FC);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #0FF0FC) drop-shadow(0 0 20px #0FF0FC);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(15, 240, 252, 0.2),
+                0 0 10px rgba(15, 240, 252, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(15, 240, 252, 0.4),
+                0 0 20px rgba(15, 240, 252, 0.4);
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(15, 240, 252, 0.5))
+           drop-shadow(0 0 4px rgba(15, 240, 252, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 3px rgba(15, 240, 252, 0.7))
+           drop-shadow(0 0 6px rgba(15, 240, 252, 0.5));
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+/* Section-specific styles */
+#hero h1, #hero .neon-text {
+  @apply neon-text-blue;
+}
+
+#experience h2, #experience .neon-text {
+  @apply neon-text-green;
+}
+
+#projects h2, #projects .neon-text {
+  @apply neon-text-yellow;
+}
+
+#skills h2, #skills .neon-text {
+  @apply neon-text-blue;
+}
+
+#hobbies h2, #hobbies .neon-text {
+  @apply neon-text-green;
+}
+
+#contact h2, #contact .neon-text {
+  @apply neon-text-yellow;
+}
